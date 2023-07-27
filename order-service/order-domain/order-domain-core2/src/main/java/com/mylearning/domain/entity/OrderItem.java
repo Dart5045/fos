@@ -28,7 +28,7 @@ public class OrderItem extends BaseEntity<OrderItemId>{
         subTotal = builder.subTotal;
     }
 
-    private static Builder builder(){
+    public static Builder builder(){
         return new Builder();
     }
 
