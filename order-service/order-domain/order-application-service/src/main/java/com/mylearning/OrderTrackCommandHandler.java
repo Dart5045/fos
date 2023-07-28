@@ -1,4 +1,4 @@
-package com.mylearning.domain;
+package com.mylearning;
 
 import com.mylearning.domain.dto.track.TrackOrderQuery;
 import com.mylearning.domain.dto.track.TrackOrderResponse;
