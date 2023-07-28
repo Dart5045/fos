@@ -1,4 +1,4 @@
-package com.mylearning;
+package com.mylearning.domain;
 
 import com.mylearning.domain.dto.create.CreateOrderCommand;
 import com.mylearning.domain.dto.create.CreateOrderResponse;
