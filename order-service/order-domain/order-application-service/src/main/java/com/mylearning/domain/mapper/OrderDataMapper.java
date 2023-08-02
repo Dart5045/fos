@@ -4,6 +4,7 @@ package com.mylearning.domain.mapper;
 import com.mylearning.domain.dto.create.CreateOrderCommand;
 import com.mylearning.domain.dto.create.CreateOrderResponse;
 import com.mylearning.domain.dto.create.OrderAddress;
+import com.mylearning.domain.dto.track.TrackOrderResponse;
 import com.mylearning.domain.entity.Order;
 import com.mylearning.domain.entity.OrderItem;
 import com.mylearning.domain.entity.Product;
@@ -65,10 +66,20 @@ public class OrderDataMapper {
         );
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order){
+    public TrackOrderResponse orderToTrackOrderResponse(Order order){
+        return TrackOrderResponse
+                .builder()
+                .orderTrackingId(order.getTrackingId().getT())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
+                .build();
+    }
+
+    public CreateOrderResponse orderToCreateOrderResponse(Order order,String message){
          return CreateOrderResponse
                 .builder()
                  .orderTackingId(order.getTrackingId().getT())
+                 .message(message)
                 .build();
     }
 
